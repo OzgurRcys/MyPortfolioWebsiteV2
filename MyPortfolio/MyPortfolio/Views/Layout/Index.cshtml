@@ -1,0 +1,29 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+@await Component.InvokeAsync("_LayoutHeadComponentsPartial")
+
+<body>
+    <div class="wrapper">
+        @await Component.InvokeAsync("_LayoutNavbarComponentPartial")
+        @await Component.InvokeAsync("_LayoutSidebarComponentPartial")
+        <div class="main-panel">
+            @RenderBody()
+            <footer class="footer">
+                <div class="container-fluid">
+                    <nav class="pull-left">
+                    </nav>
+                    <div class="copyright ml-auto">
+                        @DateTime.Now.Year
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+@await Component.InvokeAsync("_LayoutScriptComponentPartial")
+
+</html>
